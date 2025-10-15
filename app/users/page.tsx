@@ -1,5 +1,5 @@
-import UserHeader from "../../../components/ users/UserHeader";
-import UserTable from "../../../components/ users/UserTable";
+import UserHeader from "../../components/ users/UserHeader";
+import UserTable from "../../components/ users/UserTable";
 
 export default function UsersPage() {
     return (

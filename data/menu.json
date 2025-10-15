@@ -1,0 +1,29 @@
+[
+  {
+    "label": "Home",
+    "href": "/",
+    "icon": "HomeIcon",
+    "subItems": []
+  },
+  {
+    "label": "Dashboard",
+    "href": "/dashboard",
+    "icon": "HomeIcon",
+    "subItems": []
+  },
+  {
+    "label": "Projects",
+    "href": "/projects",
+    "icon": "FolderIcon",
+    "subItems": [
+      { "label": "Active", "href": "/projects/active" },
+      { "label": "Archived", "href": "/projects/archived" }
+    ]
+  },
+  {
+    "label": "Settings",
+    "href": "/settings",
+    "icon": "SettingsIcon",
+    "subItems": []
+  }
+]
