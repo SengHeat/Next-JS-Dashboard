@@ -7,12 +7,12 @@ export default function Home() {
 
     const router = useRouter();
 
-    // useEffect(() => {
-    //     const token = localStorage.getItem("authToken");
-    //     if (!token) {
-    //         router.push("/login"); // redirect if not logged in
-    //     }
-    // }, [router]);
+    useEffect(() => {
+        const token = localStorage.getItem("authToken");
+        if (!token) {
+            router.push("/login"); // redirect if not logged in
+        }
+    }, [router]);
 
     return (
         <div className="flex min-h-screen flex-col gap-8">

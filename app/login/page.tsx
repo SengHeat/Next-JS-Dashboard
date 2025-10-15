@@ -5,19 +5,19 @@ import { endpoints } from "@/lib/api";
 
 export default function SignInPage() {
     const router = useRouter();
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState(false);
 
     // Redirect to home if token already exists
-    // useEffect(() => {
-    //     const token = localStorage.getItem("authToken");
-    //     if (token) {
-    //         router.push("/");
-    //     }
-    // }, [router]);
+    useEffect(() => {
+        const token = localStorage.getItem("authToken");
+        if (token) {
+            router.push("/");
+        }
+    }, [router]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -29,7 +29,7 @@ export default function SignInPage() {
             const res = await fetch(endpoints.login, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ username, password }),
+                body: JSON.stringify({ email, password }),
             });
 
             const data = await res.json();
@@ -71,11 +71,11 @@ export default function SignInPage() {
                             Username
                         </label>
                         <input
-                            id="username"
+                            id="email"
                             type="text"
                             placeholder="Enter your phone number"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             className="w-full p-3 rounded-lg bg-white text-black outline-none focus:ring-2 focus:ring-orange-400"
                             required
                         />
